@@ -1,0 +1,40 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    },
+    {
+      "src": "backend/server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "backend/server.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html",
+      "status": 200
+    }
+  ],
+  "env": {
+    "MONGO_URI": "@MONGO_URI",
+    "JWT_SECRET": "@JWT_SECRET",
+    "JWT_EXPIRE": "7d",
+    "CLIENT_URL": "@CLIENT_URL",
+    "CLOUDINARY_CLOUD_NAME": "@CLOUDINARY_CLOUD_NAME",
+    "CLOUDINARY_API_KEY": "@CLOUDINARY_API_KEY",
+    "CLOUDINARY_API_SECRET": "@CLOUDINARY_API_SECRET",
+    "GOOGLE_CLIENT_ID": "@GOOGLE_CLIENT_ID",
+    "GOOGLE_CLIENT_SECRET": "@GOOGLE_CLIENT_SECRET",
+    "GOOGLE_CALLBACK_URL": "@GOOGLE_CALLBACK_URL",
+    "SESSION_SECRET": "@SESSION_SECRET"
+  }
+}
