@@ -86,15 +86,15 @@ export const Footer = () => {
             <ul className="space-y-3 text-gray-300 text-sm">
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
-                <span>+91 1234-567-890</span>
+                <span>7020265545</span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4" />
-                <span>support@pageturn.com</span>
+                <span>anandthakur0700@gmail.com</span>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-1" />
-                <span>123 Book Street, New Delhi, India</span>
+                <span>kalyan, thane, maharashtra, 421301</span>
               </li>
             </ul>
           </div>
