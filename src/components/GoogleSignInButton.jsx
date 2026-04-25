@@ -55,8 +55,9 @@ export const GoogleSignInButton = ({ variant = 'default' }) => {
         navigate('/');
       }
     } catch (error) {
-      toast.error('Failed to authenticate with Google. Make sure localhost:5173 is authorized in Google Cloud Console.');
-      console.error(error);
+      const errorMsg = error.response?.data?.message || error.message || 'Failed to authenticate with Google';
+      toast.error(`Google Sign-In Error: ${errorMsg}`);
+      console.error('Google Sign-In Error details:', error.response?.data || error);
     } finally {
       setIsLoading(false);
     }
